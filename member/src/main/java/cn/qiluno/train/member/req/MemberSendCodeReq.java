@@ -3,7 +3,7 @@ package cn.qiluno.train.member.req;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 
-public class MemberRegisterReq {
+public class MemberSendCodeReq {
 
     @NotBlank(message = "【手机号】不能为空")
     @Pattern(regexp = "^1\\d{10}$", message = "手机号格式错误")
@@ -19,7 +19,7 @@ public class MemberRegisterReq {
 
     @Override
     public String toString() {
-        return "MemberRegisterReq{" +
+        return "MemberSendCodeReq{" +
                 "mobile='" + mobile + '\'' +
                 '}';
     }
