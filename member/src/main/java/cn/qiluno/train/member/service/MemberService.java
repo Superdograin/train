@@ -6,6 +6,7 @@ import cn.hutool.core.util.ObjectUtil;
 import cn.hutool.core.util.RandomUtil;
 import cn.qiluno.train.common.exception.BusinessException;
 import cn.qiluno.train.common.exception.BusinessExceptionEnum;
+import cn.qiluno.train.common.util.JWTUtil;
 import cn.qiluno.train.common.util.SnowflakeUtil;
 import cn.qiluno.train.member.domain.Member;
 import cn.qiluno.train.member.domain.MemberExample;
@@ -19,7 +20,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class MemberService {
@@ -90,7 +93,11 @@ public class MemberService {
 
         // 生成 token 并返回
         MemberLoginResp resp = BeanUtil.copyProperties(memberDB, MemberLoginResp.class);
-        resp.setToken("");
+        Map<String, Object> info = new HashMap<>();
+        info.put("id", memberDB.getId());
+        info.put("mobile", memberDB.getMobile());
+        String token = JWTUtil.createToken(info);
+        resp.setToken(token);
         return resp;
     }
 
