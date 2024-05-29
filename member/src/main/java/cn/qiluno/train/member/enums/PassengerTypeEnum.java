@@ -9,7 +9,8 @@ public enum PassengerTypeEnum {
 
     ADULT("1", "成人"),
     CHILD("2", "儿童"),
-    STUDENT("3", "学生");
+    STUDENT("3", "学生"),
+    SOLDIER("4", "残疾军人");
 
     private String code;
 
