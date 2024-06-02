@@ -15,14 +15,11 @@
           <user-outlined /> &nbsp; 关于
         </router-link>
       </a-menu-item>
-      <a-sub-menu key="member">
-        <template>
-          <span>
-            <UnorderedListOutlined />
-            会员管理
-          </span>
-        </template>
-      </a-sub-menu>
+      <a-menu-item key="/station">
+        <router-link to="/station">
+          <user-outlined /> &nbsp; 车站管理
+        </router-link>
+      </a-menu-item>
     </a-menu>
   </a-layout-sider>
 </template>

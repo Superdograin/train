@@ -3,7 +3,6 @@ package cn.qiluno.train.${module}.service;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.date.DateTime;
 import cn.hutool.core.util.ObjectUtil;
-import cn.qiluno.train.common.context.LoginMemberContext;
 import cn.qiluno.train.common.resp.PageResp;
 import cn.qiluno.train.common.util.SnowflakeUtil;
 import cn.qiluno.train.${module}.domain.${Domain};
